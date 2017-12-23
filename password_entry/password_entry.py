@@ -45,7 +45,7 @@ class MainWindow(Gtk.Window):
     def on_button_clicked(self,button):
         text = self.entry.get_text()
         if text:
-            print(self.entry.get_text())
+            print(text)
 
 win = MainWindow()
 win.connect("delete-event", Gtk.main_quit)
