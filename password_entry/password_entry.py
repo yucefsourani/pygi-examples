@@ -27,7 +27,7 @@ class MainWindow(Gtk.Window):
         self.entry.props.secondary_icon_tooltip_markup = "<b>Show Password</b>"
         self.entry.props.secondary_icon_pixbuf = self.icon_show
         
-        button = Gtk.Button("Print Text")
+        button = Gtk.Button("Print Password")
         vbox.pack_start(button, True, True, 0)
         button.connect("clicked",self.on_button_clicked)
         
