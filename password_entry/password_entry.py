@@ -15,8 +15,8 @@ class MainWindow(Gtk.Window):
         
         self.icon_show =  GdkPixbuf.Pixbuf.new_from_file("icons/130516.svg")
         self.icon_hide = GdkPixbuf.Pixbuf.new_from_file("icons/132906.svg")
-        #self.icon_show = GdkPixbuf.Pixbuf.new_from_file_at_size("130516.svg",mainbuttonsizewidth,mainbuttonsizeheight)
-        #self.icon_hide = GdkPixbuf.Pixbuf.new_from_file_at_size("132906.svg",mainbuttonsizewidth,mainbuttonsizeheight)
+        #self.icon_show = GdkPixbuf.Pixbuf.new_from_file_at_size("130516.svg",32,32)
+        #self.icon_hide = GdkPixbuf.Pixbuf.new_from_file_at_size("132906.svg",32,32)
 
         
         self.entry = Gtk.Entry()
