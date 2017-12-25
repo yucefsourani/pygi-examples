@@ -411,7 +411,7 @@ class Application(Gtk.Application):
         self.about.set_program_name('Calculator')
         self.about.set_version('1.0')
         self.about.set_copyright('Calculator programming with python')
-        self.about.set_website('aminenet.weebly.com')
+        self.about.set_website('http://aminenet.weebly.com')
         self.about.set_logo_icon_name("accessories-calculator")
         self.about.set_authors(["Mohamed Amine Bouzidi"])
         self.about.set_license("""Calculator is free software: you can redistribute it and/or modify
