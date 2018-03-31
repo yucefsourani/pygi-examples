@@ -16,4 +16,10 @@ https://lazka.github.io/pgi-docs/#Vte-2.91
 
 # Require
 
-vte
+vte291 
+
+pygobject3  
+
+python3-gobject
+
+gtk3
