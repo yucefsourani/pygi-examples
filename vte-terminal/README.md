@@ -23,3 +23,8 @@ pygobject3
 python3-gobject
 
 gtk3
+
+
+# Fedora
+
+sudo dnf install vte291 pygobject3 gtk3 python3-gobject
