@@ -26,7 +26,7 @@ import pwd
 import gi
 gi.require_version('Gtk', '3.0')
 gi.require_version('Vte', '2.91')
-from gi.repository import Gtk, Vte, GLib, Gdk, Pango
+from gi.repository import Gtk, Vte, GLib, Gdk
 
 
 class CursorShape(Gtk.Dialog):
