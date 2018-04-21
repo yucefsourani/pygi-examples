@@ -101,6 +101,8 @@ class Terminal(Gtk.Window):
         scrolledwindow = Gtk.ScrolledWindow()
         self.add(scrolledwindow)
         
+        self.clipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
+        
         self.terminal = Vte.Terminal()
         self.terminal.connect("eof",self.quit_)
         self.terminal.set_color_background(Gdk.RGBA(red=0.180392, green=0.203922, blue=0.211765, alpha=1.000000))
@@ -126,24 +128,24 @@ class Terminal(Gtk.Window):
         self.menu = Gtk.Menu()
         self.menu.set_screen(Gdk.Screen().get_default())
         
-        copytextmenuitem = Gtk.MenuItem("Copy")
-        pastetextmenuitem = Gtk.MenuItem("Paste")
+        self.copytextmenuitem = Gtk.MenuItem("Copy")
+        self.pastetextmenuitem = Gtk.MenuItem("Paste")
         fontsizemenuitem = Gtk.MenuItem("Font")
         cursorshapemenuitem = Gtk.MenuItem("Cursor Shape")
         cursorcolormenuitem = Gtk.MenuItem("Cursor Color")
         backgroundmenuitem = Gtk.MenuItem("Backgound Color")
         foregroundmenuitem = Gtk.MenuItem("Foreground Color")
         
-        copytextmenuitem.connect("activate", self.copy_text)
-        pastetextmenuitem.connect("activate", self.paste_text)
+        self.copytextmenuitem.connect("activate", self.copy_text)
+        self.pastetextmenuitem.connect("activate", self.paste_text)
         fontsizemenuitem.connect("activate", self.font_change)
         cursorshapemenuitem.connect("activate", self.cursor_shape)
         cursorcolormenuitem.connect("activate", self.on_cursor_menuitem_activated)
         backgroundmenuitem.connect("activate", self.on_background_menuitem_activated)
         foregroundmenuitem.connect("activate", self.on_foreground_menuitem_activated)
         
-        self.menu.append(copytextmenuitem)
-        self.menu.append(pastetextmenuitem)
+        self.menu.append(self.copytextmenuitem)
+        self.menu.append(self.pastetextmenuitem)
         self.menu.append(fontsizemenuitem)
         self.menu.append(cursorshapemenuitem)
         self.menu.append(cursorcolormenuitem)
@@ -164,6 +166,16 @@ class Terminal(Gtk.Window):
         CursorShape(self,self.terminal)
         
     def on_button_event(self,terminal,event):
+        if not  self.terminal.get_has_selection():
+            self.copytextmenuitem.set_sensitive(False)
+        else:
+            self.copytextmenuitem.set_sensitive(True)
+            
+        if not  self.clipboard.wait_for_text():
+            self.pastetextmenuitem.set_sensitive(False)
+        else:
+            self.pastetextmenuitem.set_sensitive(True)
+            
         if  event.button==3:
             self.menu.popup_at_pointer()
             self.menu.show_all()
