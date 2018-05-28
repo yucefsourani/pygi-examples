@@ -5,7 +5,7 @@
 
 # Requires
 
-python-markdown2
+python3-markdown2
 
 WebKit2-4.0
 
