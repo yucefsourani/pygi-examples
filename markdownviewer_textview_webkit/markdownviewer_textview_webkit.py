@@ -18,7 +18,7 @@ def convert_markdown_to_html(markdown_text,extra=None):
     Convert from markdown to html .
     """
     if not extra:
-        extra = ["cuddled-lists","code-friendly","fenced-code-blocks"] #https://github.com/trentm/python-markdown2/wiki/Extras
+        extra = ["cuddled-lists","fenced-code-blocks"] #https://github.com/trentm/python-markdown2/wiki/Extras
     return markdown2.markdown(markdown_text,extras=extra)
 
 
