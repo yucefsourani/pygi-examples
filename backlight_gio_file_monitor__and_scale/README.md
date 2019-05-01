@@ -2,7 +2,7 @@
 
 User Gio.File To Watch backlight File (Example "/sys/class/backlight/intel_backlight/brightness") and Change the value of Gtk.Scale based on it.
 
-(Need Root permission To Change Backlight From Scale Widget See Line 111 (subprocess.call) You need Root permission To write on backlight File)
+(Need Root permission To Change Backlight From Scale Widget See Line 92 (subprocess.call) You need Root permission To write on backlight File)
 
 # Screenshot
 
