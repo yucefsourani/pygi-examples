@@ -6,10 +6,10 @@ User Gio.File To Watch backlight File (Example "/sys/class/backlight/intel_backl
 
 # Screenshot
 
-![Alt text](https://github.com/mabouzidi/pygi-examples/blob/master/backlight_gio_file_monitor__and_scale/e1.jpg "Screenshot")
+![Alt text](https://raw.githubusercontent.com/yucefsourani/pygi-examples/master/backlight_gio_file_monitor__and_scale/e1.jpg "Screenshot")
 
 
-![Alt text](https://github.com/mabouzidi/pygi-examples/blob/master/backlight_gio_file_monitor__and_scale/e2.jpg "Screenshot")
+![Alt text](https://raw.githubusercontent.com/yucefsourani/pygi-examples/master/backlight_gio_file_monitor__and_scale/e2.jpg "Screenshot")
 
 
 https://lazka.github.io/pgi-docs/#Gio-2.0/classes/File.html#Gio.File.monitor_file
