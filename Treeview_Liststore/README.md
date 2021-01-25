@@ -1,5 +1,8 @@
 # Dnf Repos Manager
 
+# Require python3-dnf
+
+sudo dnf install python3-dnf
 
 # Screenshot
 
